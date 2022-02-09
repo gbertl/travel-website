@@ -20,3 +20,15 @@
   display: grid;
   gap: 1.5rem;
 }
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.img-scale-effect {
+  transition: var(--img-transition);
+
+  &:hover {
+    transform: var(--img-scale);
+  }
+}
