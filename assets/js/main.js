@@ -1,19 +1,13 @@
-const toggleBodyScroll = () => {
-  document.body.classList.toggle('overflow-y-hidden');
-};
-
 const showMenu = () => {
   const navMenu = document.getElementById('nav-menu');
   const navToggle = document.getElementById('nav-toggle');
   const navClose = document.getElementById('nav-close');
 
   navToggle.addEventListener('click', () => {
-    toggleBodyScroll();
     navMenu.classList.add('show-menu');
   });
 
   navClose.addEventListener('click', () => {
-    toggleBodyScroll();
     navMenu.classList.remove('show-menu');
   });
 
@@ -22,7 +16,6 @@ const showMenu = () => {
   // Close menu after clicking link
   navLink.forEach((nl) => {
     nl.addEventListener('click', () => {
-      toggleBodyScroll();
       navMenu.classList.remove('show-menu');
     });
   });
@@ -77,3 +70,37 @@ const playPauseVideo = () => {
 };
 
 playPauseVideo();
+
+const scrollUp = () => {
+  window.addEventListener('scroll', () => {
+    const scrollUpBtn = document.getElementById('scroll-up');
+    this.scrollY >= 200
+      ? scrollUpBtn.classList.add('show-scroll')
+      : scrollUpBtn.classList.remove('show-scroll');
+  });
+};
+
+scrollUp();
+
+const activeOnScroll = () => {
+  const viewPortHeight = document.documentElement.clientHeight;
+  const sections = document.querySelectorAll('section[id]');
+
+  window.addEventListener('scroll', () => {
+    sections.forEach((current) => {
+      const sectionPosition = current.getBoundingClientRect().y;
+      const sectionHeight = current.getBoundingClientRect().height;
+      const currentNavItem = document.querySelector(
+        `.nav__menu a[href*=${current.getAttribute('id')}]`
+      );
+      const activeLink = document.querySelector('.nav__menu a.active-link');
+
+      if (viewPortHeight > sectionPosition + (sectionHeight * 2) / 3) {
+        activeLink.classList.remove('active-link');
+        currentNavItem.classList.add('active-link');
+      }
+    });
+  });
+};
+
+activeOnScroll();
