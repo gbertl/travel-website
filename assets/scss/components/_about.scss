@@ -2,13 +2,13 @@
   &__data {
     text-align: center;
 
-    @include mqmin(large) {
+    @include mqmin(medium) {
       text-align: initial;
     }
   }
 
   &__title {
-    @include mqmin(large) {
+    @include mqmin(medium) {
       text-align: initial;
       margin-bottom: var(--mb-1-5);
     }
@@ -17,7 +17,7 @@
   &__container {
     row-gap: 2.5rem;
 
-    @include mqmin(large) {
+    @include mqmin(medium) {
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
     }
@@ -39,10 +39,18 @@
 
     &-one {
       width: 130px;
+
+      @include mqmin(large) {
+        width: 240px;
+      }
     }
 
     &-two {
       width: 180px;
+
+      @include mqmin(large) {
+        width: 290px;
+      }
     }
 
     &-one,

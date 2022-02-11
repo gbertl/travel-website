@@ -7,6 +7,10 @@
     height: 100vh;
     object-fit: cover;
     object-position: 83%;
+
+    @include mqminh(721px) {
+      height: 640px;
+    }
   }
 
   &__container {
@@ -15,14 +19,22 @@
     align-content: center;
     row-gap: 3rem;
 
-    @include mqmin(large) {
+    @include mqmin(medium) {
       height: 100vh;
       grid-template-rows: 1.8fr 0.5fr;
+    }
+
+    @include mqmin(large) {
+      grid-template-rows: 2fr 0.5fr;
+    }
+
+    @include mqminh(721px) {
+      height: 640px;
     }
   }
 
   &__data {
-    @include mqmin(large) {
+    @include mqmin(medium) {
       align-self: flex-end;
     }
   }
@@ -51,7 +63,7 @@
     flex-direction: column;
     row-gap: 1.5rem;
 
-    @include mqmin(large) {
+    @include mqmin(medium) {
       flex-direction: row;
       align-self: flex-end;
       margin-bottom: 3rem;
@@ -75,13 +87,19 @@
     bottom: 1rem;
     width: 228px;
 
-    @include mqmax(small) {
+    @include mqmax(x-small) {
       width: 190px;
       padding: 1rem;
     }
 
-    @include mqmin(large) {
+    @include mqmin(medium) {
       bottom: 3rem;
+    }
+
+    @include mqmin(large) {
+      width: 328px;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 2rem;
     }
   }
 
@@ -90,6 +108,10 @@
     font-size: var(--small-font-size);
     font-weight: var(--font-semi-bold);
     margin-bottom: var(--mb-0-75);
+
+    @include mqmin(large) {
+      font-size: var(--normal-font-size);
+    }
   }
 
   &__info-button {
@@ -106,6 +128,10 @@
 
     &:hover {
       transform: var(--img-scale);
+    }
+
+    @include mqmin(large) {
+      width: 240px;
     }
   }
 }

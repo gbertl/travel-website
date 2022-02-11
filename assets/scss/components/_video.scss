@@ -22,16 +22,26 @@
   font-size: 1.2rem;
 }
 
-@include mqmax(small) {
+@include mqmax(x-small) {
   .video__container {
     padding: 0;
   }
 }
 
-@include mqmin(medium) {
+@include mqmin(small) {
   .video__container {
     display: grid;
     grid-template-columns: 0.6fr;
     justify-content: center;
+  }
+}
+
+@include mqmin(large) {
+  .video__container {
+    grid-template-columns: 0.7fr;
+  }
+
+  .video__description {
+    padding: 0 8rem;
   }
 }

@@ -65,11 +65,19 @@
   color: var(--text-color);
 }
 
-@include mqmin(large) {
+@include mqmin(medium) {
   .footer {
     &__rights {
       flex-direction: row;
       justify-content: space-between;
+    }
+  }
+}
+
+@include mqmin(large) {
+  .footer {
+    &__content {
+      justify-items: center;
     }
   }
 }

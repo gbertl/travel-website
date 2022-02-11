@@ -6,10 +6,6 @@
 .place__container {
   grid-template-columns: repeat(2, max-content);
   justify-content: center;
-
-  @include mqmin(large) {
-    padding-top: 2rem;
-  }
 }
 
 .place__card {
@@ -79,15 +75,34 @@
   padding: 0.75rem 1rem;
 }
 
-@include mqmax(small) {
+@include mqmax(x-small) {
   .place__container {
     grid-template-columns: max-content;
     justify-content: center;
   }
 }
 
-@include mqmin(medium) {
+@include mqmin(small) {
   .place__container {
     grid-template-columns: repeat(3, max-content);
+  }
+}
+
+@include mqmin(medium) {
+  .place__container {
+    padding-top: 2rem;
+  }
+}
+
+@include mqmin(large) {
+  .place {
+    &__container {
+      gap: 3rem 2rem;
+    }
+
+    &__card,
+    &__img {
+      height: 263px;
+    }
   }
 }

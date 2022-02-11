@@ -31,14 +31,14 @@
   color: var(--text-color);
 }
 
-@include mqmin(medium) {
+@include mqmin(small) {
   .subscribe__form {
     width: 470px;
     margin: 0 auto;
   }
 }
 
-@include mqmin(large) {
+@include mqmin(medium) {
   .subscribe {
     &__bg {
       background: none;
