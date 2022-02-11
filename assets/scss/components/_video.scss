@@ -21,3 +21,17 @@
 .video__button-icon {
   font-size: 1.2rem;
 }
+
+@include mqmax(small) {
+  .video__container {
+    padding: 0;
+  }
+}
+
+@include mqmin(medium) {
+  .video__container {
+    display: grid;
+    grid-template-columns: 0.6fr;
+    justify-content: center;
+  }
+}

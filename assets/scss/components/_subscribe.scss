@@ -30,3 +30,28 @@
 .subscribe__input::placeholder {
   color: var(--text-color);
 }
+
+@include mqmin(medium) {
+  .subscribe__form {
+    width: 470px;
+    margin: 0 auto;
+  }
+}
+
+@include mqmin(large) {
+  .subscribe {
+    &__bg {
+      background: none;
+      padding: 0;
+    }
+
+    &__container {
+      background-color: var(--first-color-second);
+      padding: 3.5rem 0;
+    }
+
+    &__input {
+      padding: 0 0.5rem;
+    }
+  }
+}

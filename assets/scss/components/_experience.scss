@@ -43,6 +43,11 @@
 .experience__overlay:nth-child(1) {
   width: 263px;
   margin-right: 2rem;
+
+  @include mqmin(large) {
+    width: 363px;
+    margin-right: 4rem;
+  }
 }
 
 .experience__overlay:nth-child(2) {
@@ -50,4 +55,26 @@
   position: absolute;
   top: 2rem;
   right: 0;
+
+  @include mqmin(large) {
+    width: 160px;
+  }
+}
+
+@include mqmax(small) {
+  .experience__content {
+    padding: 0;
+  }
+
+  .experience__overlay:nth-child(1) {
+    width: 190px;
+  }
+
+  .experience__overlay:nth-child(2) {
+    width: 80px;
+  }
+
+  .experience__img {
+    padding: 0;
+  }
 }

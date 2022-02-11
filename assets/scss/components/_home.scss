@@ -14,6 +14,17 @@
     height: calc(100vh - var(--header-height));
     align-content: center;
     row-gap: 3rem;
+
+    @include mqmin(large) {
+      height: 100vh;
+      grid-template-rows: 1.8fr 0.5fr;
+    }
+  }
+
+  &__data {
+    @include mqmin(large) {
+      align-self: flex-end;
+    }
   }
 
   &__data-subtitle,
@@ -39,6 +50,13 @@
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
+
+    @include mqmin(large) {
+      flex-direction: row;
+      align-self: flex-end;
+      margin-bottom: 3rem;
+      column-gap: 2.5rem;
+    }
   }
 
   &__social-link {
@@ -56,6 +74,15 @@
     right: 0;
     bottom: 1rem;
     width: 228px;
+
+    @include mqmax(small) {
+      width: 190px;
+      padding: 1rem;
+    }
+
+    @include mqmin(large) {
+      bottom: 3rem;
+    }
   }
 
   &__info-title {

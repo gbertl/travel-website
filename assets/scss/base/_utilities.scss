@@ -1,6 +1,10 @@
 .section {
   padding: 4.5rem 0 2.5rem;
 
+  @include mqmin(large) {
+    padding: 7rem 0 2rem;
+  }
+
   &__title {
     font-size: var(--h2-font-size);
     color: var(--title-color);

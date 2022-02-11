@@ -1,13 +1,21 @@
 $breakpoints: (
-  small: 500px,
-  medium: 768px,
-  large: 1200px,
+  small: 340px,
+  medium: 568px,
+  large: 768px,
 );
 
 @mixin mqmax($key) {
   $size: map-get($breakpoints, $key);
 
   @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin mqmin($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media (min-width: $size) {
     @content;
   }
 }

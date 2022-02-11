@@ -15,4 +15,26 @@
   .nav__toggle {
     color: var(--title-color);
   }
+
+  @include mqmin(large) {
+    .nav__link {
+      color: var(--text-color);
+
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+
+    .active-link {
+      color: var(--title-color);
+
+      &::before {
+        background-color: var(--title-color);
+      }
+    }
+
+    .change-theme {
+      color: var(--text-color);
+    }
+  }
 }

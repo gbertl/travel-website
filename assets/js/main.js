@@ -104,3 +104,34 @@ const activeOnScroll = () => {
 };
 
 activeOnScroll();
+
+const themeChanger = () => {
+  const themeButton = document.getElementById('theme-button');
+  const darkTheme = 'dark-theme';
+  const iconTheme = 'ri-sun-line';
+
+  const selectedTheme = localStorage.getItem('selected-theme');
+  const selectedIcon = localStorage.getItem('selected-icon');
+
+  if (selectedTheme === 'dark') {
+    document.body.classList.add(darkTheme);
+    themeButton.classList.add(iconTheme);
+  }
+
+  themeButton.addEventListener('click', () => {
+    document.body.classList.toggle(darkTheme);
+    themeButton.classList.toggle(iconTheme);
+
+    const getCurrentTheme = document.body.classList.contains(darkTheme)
+      ? 'dark'
+      : 'light';
+    const getCurrentIcon = themeButton.classList.contains(iconTheme)
+      ? 'ri-moon-line'
+      : 'ri-sun-line';
+
+    localStorage.setItem('selected-theme', getCurrentTheme);
+    localStorage.setItem('selected-icon', getCurrentIcon);
+  });
+};
+
+themeChanger();

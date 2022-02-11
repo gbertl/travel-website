@@ -64,3 +64,12 @@
 .footer__terms-link:hover {
   color: var(--text-color);
 }
+
+@include mqmin(large) {
+  .footer {
+    &__rights {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
